@@ -60,8 +60,8 @@ Flags are written as a **map** to Firestore, not as dotted paths.
 
 ```json
 {
-  "firstName": "Oscar",
-  "lastName": "Morgan",
+  "firstName": "Bob",
+  "lastName": "Smith",
   "flags": {
     "notifications": "enabled",
     "marketingUpdates": "disabled"

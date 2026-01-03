@@ -3,6 +3,7 @@
 This document defines the **complete Accounts (Users) data model** used by Barfinder.
 
 It covers:
+
 - Core user profile data
 - Preferences, flags, and loyalty state
 - User check-ins (event-level)

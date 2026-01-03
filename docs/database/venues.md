@@ -3,6 +3,7 @@
 This document defines the **complete Venues data model** used by Barfinder.
 
 It covers:
+
 - Core venue documents
 - Geo-indexing and discovery fields
 - Flags, weather, and live context

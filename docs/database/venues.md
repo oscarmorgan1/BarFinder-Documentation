@@ -1,4 +1,4 @@
-# Database Schema — Venues (Complete)
+# Database Schema — Venues
 
 This document defines the **complete Venues data model** used by Barfinder.
 
@@ -287,5 +287,3 @@ See [Check In To Venue](../apis/venue/check-in-to-venue.md) for the check-in flo
 - Safe to evolve without breaking clients
 
 ---
-
-This schema enables fast map discovery while preserving deep contextual insight and future analytics flexibility.

@@ -1,13 +1,14 @@
-# Barfinder — Internal Documentation
+# BarFinder — Internal Documentation
 
-Welcome to the internal documentation for **Barfinder**, a location-based nightlife discovery platform.
+Welcome to the internal documentation for **BarFinder**, a location-based nightlife discovery platform.
 
-Barfinder enables users to discover nearby bars, pubs, clubs, and venues through a **map-first experience**, enhanced by conversational search, venue metadata, and social signals such as points, activity, and vibe.
+Barfinder enables users to discover nearby bars, pubs, clubs, and venues through a map-first experience, enhanced by conversational search, venue metadata, and social signals such as points, activity, and vibe.
 
 This documentation is intended for:
-- Frontend engineers (React Native)
-- Backend engineers (Firebase / Cloud Functions)
-- Product and platform contributors
+
+- Frontend (React Native)
+- Backend (Firebase / Cloud Functions)
+- Product and platform
 
 ---
 
@@ -18,7 +19,9 @@ Barfinder is built around a simple core experience:
 > **Show users what venues are nearby, what the atmosphere is like, and where it’s worth going right now.**
 
 The AI-driven conversational layer exists to **enhance** discovery, not replace it.  
+
 The primary product surface is the **map**, where users can:
+
 - Explore nearby venues
 - Compare vibe, mood, and popularity
 - View real-world context (distance, weather, time)
@@ -156,6 +159,7 @@ All filtering is based on known schema and rules.
 ## Contributing
 
 When adding new functionality:
+
 1. Implement the Cloud Function
 2. Create or update the corresponding `.md` file
 3. Place it in the appropriate domain folder

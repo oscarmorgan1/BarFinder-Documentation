@@ -15,10 +15,15 @@ nav:
       - Connections:
           - Respond to Friend Request: apis/connections/respond-to-friend-request.md
       - Map:
-          - Get Nearby Venues (Raw): apis/map/get-nearby-venues.md
+          - Get Nearby Venues: apis/map/get-nearby-venues.md
           - Nightlife Query (AI): apis/map/nightlife-query.md
       - Venue:
           - Check In To Venue: apis/venue/check-in-to-venue.md
   - Database:
     - Accounts: database/account.md
     - Venues: database/venues.md
+
+  - Local Functions:
+    - Account:
+        - Create Shortcut: local_functions/create-shortcut.md
+

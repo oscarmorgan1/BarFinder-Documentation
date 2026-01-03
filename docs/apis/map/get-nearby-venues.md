@@ -71,7 +71,7 @@ GET /getNearbyVenues?lat=-35.28&lon=149.13&radius=1200
 
 ## Behaviour
 
-- Performs a geospatial query using geohash bounds
+- Performs a query using geohash bounds
 - Computes exact distance using `geofire-common`
 - Filters out venues outside the radius
 - Results are sorted by distance (ascending)
@@ -89,8 +89,8 @@ GET /getNearbyVenues?lat=-35.28&lon=149.13&radius=1200
 
 ## Notes for React Native Clients
 
-- This endpoint is best used for **debugging or internal tooling**
-- Client-facing search should prefer `/nightlifeQuery`
+- This endpoint is best used for stand-alone data retriving. ie. map view.
+- Client-facing search should prefer `/nightlifeQuery` when using AI
 - Results may be large; consider paging or limiting client-side
 
 ---

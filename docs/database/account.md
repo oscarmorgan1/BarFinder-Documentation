@@ -1,4 +1,4 @@
-# Database Schema — Accounts (Complete)
+# Database Schema — Accounts
 
 This document defines the **complete Accounts (Users) data model** used by Barfinder.
 

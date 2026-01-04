@@ -1,0 +1,1576 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../apis/venue/check-in-to-venue/">
+      
+      
+        <link rel="next" href="../venues/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Accounts - Barfinder Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#database-schema-accounts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Barfinder Docs" class="md-header__button md-logo" aria-label="Barfinder Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Barfinder Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Accounts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Barfinder Docs" class="md-nav__button md-logo" aria-label="Barfinder Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Barfinder Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../firestore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firestore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APIs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    APIs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Account
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Account
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apis/account/get-user-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get User Information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apis/account/update-user-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update User Information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connections
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Connections
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apis/connections/respond-to-friend-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Respond to Friend Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Map
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apis/map/get-nearby-venues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Nearby Venues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apis/map/nightlife-query/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nightlife Query (AI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Venue
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Venue
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apis/venue/check-in-to-venue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Check In To Venue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Database
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accounts
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accounts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#collection-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collection Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-user-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core User Fields
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flags-permissions-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags (Permissions &amp; Controls)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flags (Permissions &amp; Controls)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preferences-discovery-taste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preferences (Discovery &amp; Taste)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loyalty-progression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loyalty &amp; Progression
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#membership-optional-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Membership (Optional / Future)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../venues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Venues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Functions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Local Functions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Account
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Account
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../local_functions/create-shortcut/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create Shortcut
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#collection-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collection Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-user-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core User Fields
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flags-permissions-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags (Permissions &amp; Controls)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flags (Permissions &amp; Controls)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preferences-discovery-taste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preferences (Discovery &amp; Taste)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loyalty-progression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loyalty &amp; Progression
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#membership-optional-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Membership (Optional / Future)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="database-schema-accounts">Database Schema — Accounts</h1>
+<p>This document defines the <strong>complete Accounts (Users) data model</strong> used by Barfinder.</p>
+<p>It covers:</p>
+<ul>
+<li>Core user profile data</li>
+<li>Preferences, flags, and loyalty state</li>
+<li>User check-ins (event-level)</li>
+<li>Saved shortcuts (local map presets)</li>
+<li>User–venue relationship snapshots</li>
+</ul>
+<p>This file is the <strong>single source of truth</strong> for all account-related data.</p>
+<hr />
+<h2 id="collection-overview">Collection Overview</h2>
+<pre><code>users/{uid}
+</code></pre>
+<p>Where:
+- <code>uid</code> is the Firebase Authentication UID
+- One document per user
+- All subcollections are user-scoped and private</p>
+<hr />
+<h2 id="purpose">Purpose</h2>
+<p>User documents represent <strong>identity, preferences, and engagement state</strong>.
+They are used to:</p>
+<ul>
+<li>Personalise map discovery</li>
+<li>Track loyalty, XP, and streaks</li>
+<li>Secure check-in validation</li>
+<li>Store client-side shortcuts</li>
+<li>Support future social features</li>
+</ul>
+<p>Accounts are <strong>write-moderate</strong>, <strong>read-heavy</strong>, and security-critical.</p>
+<hr />
+<h2 id="core-user-fields">Core User Fields</h2>
+<pre><code class="language-ts">{
+  uid: string;
+
+  displayName: string | null;
+  firstName: string | null;
+  lastName: string | null;
+
+  email: string | null;
+  emailVerified: boolean;
+
+  avatarUrl: string | null;
+
+  status: &quot;active&quot; | &quot;suspended&quot;;
+
+  createdAt: Timestamp;
+  updatedAt: Timestamp;
+  lastActiveAt: Timestamp;
+}
+</code></pre>
+<hr />
+<h2 id="flags-permissions-controls">Flags (Permissions &amp; Controls)</h2>
+<pre><code class="language-ts">flags: {
+  locationAccess: boolean;
+  notifications: boolean;
+  marketingUpdates: boolean;
+  shareStatus: boolean;
+  betaEnabled?: boolean;
+}
+</code></pre>
+<h3 id="notes">Notes</h3>
+<ul>
+<li>Flags are explicitly controlled</li>
+<li>Used for feature gating and legal compliance</li>
+<li>Never inferred client-side</li>
+</ul>
+<hr />
+<h2 id="preferences-discovery-taste">Preferences (Discovery &amp; Taste)</h2>
+<pre><code class="language-ts">preferences: {
+  vibes?: string[];              // [&quot;dance&quot;, &quot;cocktails&quot;]
+  music?: string[];              // [&quot;house&quot;, &quot;techno&quot;]
+  crowdTolerance?: &quot;low&quot; | &quot;medium&quot; | &quot;high&quot;;
+}
+</code></pre>
+<hr />
+<h2 id="loyalty-progression">Loyalty &amp; Progression</h2>
+<pre><code class="language-ts">loyalty: {
+  level: number;
+  points: number;
+  xp: number;
+
+  streakDays: number;
+  reputation?: string;
+
+  lastVisitAt?: Timestamp;
+}
+</code></pre>
+<hr />
+<h2 id="membership-optional-future">Membership (Optional / Future)</h2>
+<pre><code class="language-ts">membership: {
+  tier: &quot;Free&quot; | &quot;Pro&quot; | &quot;Extreme&quot;;
+  expiresAt?: Timestamp;
+  source?: &quot;ios&quot; | &quot;android&quot; | &quot;web&quot;;
+}
+</code></pre>
+<hr />
+<h1 id="user-subcollections">User Subcollections</h1>
+<hr />
+<h2 id="1-check-ins-verified-engagement">1. Check-ins (Verified Engagement)</h2>
+<h3 id="collection-path">Collection Path</h3>
+<pre><code>users/{uid}/checkins/{checkinId}
+</code></pre>
+<hr />
+<h3 id="purpose_1">Purpose</h3>
+<p>Check-ins represent <strong>explicit, location-verified visits</strong> to venues.
+They are used to:</p>
+<ul>
+<li>Award points and XP</li>
+<li>Maintain streaks</li>
+<li>Generate venue signals</li>
+<li>Populate user history</li>
+</ul>
+<p>See <a href="../../apis/venue/check-in-to-venue/">Check In To Venue</a> for the API flow that writes these records.</p>
+<hr />
+<h3 id="validation-rules-server-enforced">Validation Rules (Server-Enforced)</h3>
+<ul>
+<li>User must be within <strong>20 metres</strong> of venue location</li>
+<li>Cooldown enforced between check-ins</li>
+<li>GPS or trusted method required</li>
+<li>Fraud score computed per event</li>
+</ul>
+<hr />
+<h3 id="document-structure">Document Structure</h3>
+<pre><code class="language-ts">{
+  type: &quot;venue_checkin&quot;;
+
+  venueId: string;
+  venueName: string;
+
+  method: &quot;gps&quot; | &quot;qr&quot; | &quot;manual&quot;;
+  verified: boolean;
+
+  fraudScore: number;            // 0.0 – 1.0
+
+  pointsEarned: number;
+  xpEarned: number;
+
+  timestamp: Timestamp;
+}
+</code></pre>
+<hr />
+<h3 id="concrete-example">Concrete Example</h3>
+<p><strong>Path</strong></p>
+<pre><code>users/iHDTUHXP1NDqmsVb6ZoIT1jk003/checkins/chk_20250105_001
+</code></pre>
+<p><strong>Document</strong></p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;venue_checkin&quot;,
+  &quot;venueId&quot;: &quot;ruby_canberra&quot;,
+  &quot;venueName&quot;: &quot;Ruby&quot;,
+  &quot;method&quot;: &quot;gps&quot;,
+  &quot;verified&quot;: true,
+  &quot;fraudScore&quot;: 0.02,
+  &quot;pointsEarned&quot;: 10,
+  &quot;xpEarned&quot;: 10,
+  &quot;timestamp&quot;: &quot;2025-12-21T14:07:27+11:00&quot;
+}
+</code></pre>
+<hr />
+<h2 id="2-shortcuts-saved-map-presets">2. Shortcuts (Saved Map Presets)</h2>
+<h3 id="collection-path_1">Collection Path</h3>
+<pre><code>users/{uid}/shortcuts/{shortcutId}
+</code></pre>
+<hr />
+<h3 id="purpose_2">Purpose</h3>
+<p>Shortcuts allow users to <strong>save reusable discovery queries</strong>.
+They:</p>
+<ul>
+<li>Open the map with prefilled filters</li>
+<li>Bypass AI and server logic</li>
+<li>Query Firestore directly</li>
+</ul>
+<p>Saved shortcut searches are passed to <a href="../../apis/map/get-nearby-venues/">Get Nearby Venues</a>.</p>
+<hr />
+<h3 id="document-structure_1">Document Structure</h3>
+<pre><code class="language-ts">{
+  name: string;
+
+  filters: {
+    amenities?: string[];
+    tags?: string[];
+    types?: string[];
+
+    openNow?: boolean;
+    lateNight?: boolean;
+
+    radiusKm: number;
+  };
+
+  createdAt: Timestamp;
+}
+</code></pre>
+<hr />
+<h3 id="concrete-example_1">Concrete Example</h3>
+<p><strong>Path</strong></p>
+<pre><code>users/iHDTUHXP1NDqmsVb6ZoIT1jk003/shortcuts/2w7ZCNGhBpUskaXRPhwH
+</code></pre>
+<p><strong>Document</strong></p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;Play Pool&quot;,
+  &quot;filters&quot;: {
+    &quot;amenities&quot;: [&quot;Pool table&quot;],
+    &quot;openNow&quot;: false,
+    &quot;lateNight&quot;: false,
+    &quot;radiusKm&quot;: 10
+  },
+  &quot;createdAt&quot;: &quot;2025-12-22T09:44:14+11:00&quot;
+}
+</code></pre>
+<hr />
+<h2 id="3-uservenue-relationship-snapshots">3. User–Venue Relationship Snapshots</h2>
+<h3 id="collection-path_2">Collection Path</h3>
+<pre><code>users/{uid}/venues/{venueId}
+</code></pre>
+<hr />
+<h3 id="purpose_3">Purpose</h3>
+<p>Stores <strong>per-user, per-venue state</strong> without polluting core venue docs.
+Used for:</p>
+<ul>
+<li>Visit counts</li>
+<li>Streak tracking</li>
+<li>Reward unlocking</li>
+<li>UI badges</li>
+</ul>
+<hr />
+<h3 id="document-structure_2">Document Structure</h3>
+<pre><code class="language-ts">{
+  venueId: string;
+
+  visits: number;
+  verifiedCheckins: number;
+
+  streak: number;
+
+  lastVisitAt: Timestamp;
+  lastCheckinMethod: &quot;gps&quot; | &quot;qr&quot;;
+
+  unlockedRewards?: string[];
+}
+</code></pre>
+<hr />
+<h3 id="concrete-example_2">Concrete Example</h3>
+<p><strong>Path</strong></p>
+<pre><code>users/iHDTUHXP1NDqmsVb6ZoIT1jk003/venues/ruby_canberra
+</code></pre>
+<p><strong>Document</strong></p>
+<pre><code class="language-json">{
+  &quot;venueId&quot;: &quot;ruby_canberra&quot;,
+  &quot;visits&quot;: 10,
+  &quot;verifiedCheckins&quot;: 8,
+  &quot;streak&quot;: 3,
+  &quot;lastVisitAt&quot;: &quot;2025-12-21T14:07:27+11:00&quot;,
+  &quot;lastCheckinMethod&quot;: &quot;gps&quot;,
+  &quot;unlockedRewards&quot;: [&quot;free_drink&quot;]
+}
+</code></pre>
+<hr />
+<h2 id="read-write-patterns">Read &amp; Write Patterns</h2>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Firestore Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Profile read</td>
+<td>users/{uid}</td>
+</tr>
+<tr>
+<td>Update flags</td>
+<td>users/{uid}</td>
+</tr>
+<tr>
+<td>Check-in write</td>
+<td>users/{uid}/checkins</td>
+</tr>
+<tr>
+<td>Shortcut read</td>
+<td>users/{uid}/shortcuts</td>
+</tr>
+<tr>
+<td>Venue history</td>
+<td>users/{uid}/venues</td>
+</tr>
+<tr>
+<td>Signal generation</td>
+<td>venues/{venueId}/signals</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="design-principles">Design Principles</h2>
+<ul>
+<li>User data is strictly scoped</li>
+<li>No venue joins required for history</li>
+<li>Event data is append-only</li>
+<li>Shortcuts are client-owned</li>
+<li>All critical validation is server-side</li>
+</ul>
+<hr />
+<p>This schema enables secure engagement tracking while keeping map discovery fast and flexible.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

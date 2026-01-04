@@ -134,7 +134,7 @@ This eliminates:
 
 - Boilerplate auth checks in controllers
 - Duplicate logic across endpoints
-- Entire classes of authorization bugs
+- Entire classes of authorisation bugs
 
 Security is enforced at the database boundary, not in app code.
 
